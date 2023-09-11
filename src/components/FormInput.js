@@ -1,11 +1,5 @@
 import React from "react";
-import {
-  Input,
-  Box,
-  InputGroup,
-  Button,
-  InputLeftAddon,
-} from "@chakra-ui/react";
+import { Input, InputGroup, InputLeftAddon } from "@chakra-ui/react";
 
 const FormInput = ({ updateForm, id, form }) => {
   return (
