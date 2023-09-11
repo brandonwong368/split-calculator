@@ -17,16 +17,18 @@ const Board = () => {
   }
 
   return (
-    <>
+    <Box>
       <Flex height="500px" justifyContent={"center"} alignItems={"center"}>
         <VStack>
           <HStack>
             <PaddleTab
+              selected={showErg}
               handleTabClick={handleTabClick}
               buttonId="erg"
               buttonText="Erg"
             ></PaddleTab>
             <PaddleTab
+              selected={!showErg}
               handleTabClick={handleTabClick}
               buttonId="oc"
               buttonText="OC"
@@ -36,7 +38,7 @@ const Board = () => {
           {showErg ? <ErgForm /> : <OCForm />}
         </VStack>
       </Flex>
-    </>
+    </Box>
   );
 };
 

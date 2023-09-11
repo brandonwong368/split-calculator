@@ -14,7 +14,7 @@ const FormInput = ({ updateForm, id, form }) => {
       <Input
         onChange={(event) => updateForm(id, event.target.value)}
         id={id}
-        width="150px"
+        width="115px"
         value={form.content}
       ></Input>
     </InputGroup>

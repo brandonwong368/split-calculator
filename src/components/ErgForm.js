@@ -4,9 +4,9 @@ import { Input, Box, InputGroup, Button, HStack } from "@chakra-ui/react";
 import FormInput from "./FormInput";
 
 const defaultData = [
-  { id: "time", caption: "Time (mins:secs)", content: "" },
+  { id: "time", caption: "Time (min:sec)", content: "" },
   { id: "distance", caption: "Distance(m)", content: "" },
-  { id: "split", caption: "Split (per 500m)", content: "" },
+  { id: "split", caption: "Split (min:sec)", content: "" },
 ];
 
 const ErgForm = () => {
@@ -79,7 +79,7 @@ const ErgForm = () => {
     // check if distance is 0 lol
     if (formData[0].content === "") {
       // calculate total time
-      const distance = parseInt(formData[1].content);
+      const distance = Number(formData[1].content);
 
       // seconds per 500m
       const splitSeconds = calculateTotalSeconds(formData[2].content);
@@ -115,9 +115,7 @@ const ErgForm = () => {
       setFormData(updatedFormData);
     } else if (formData[2].content === "") {
       const totalSeconds = calculateTotalSeconds(formData[0].content);
-      const distance = parseInt(formData[1].content);
-
-      console.log(totalSeconds);
+      const distance = Number(formData[1].content);
 
       const totalSplitSeconds = (totalSeconds / distance) * 500;
 
